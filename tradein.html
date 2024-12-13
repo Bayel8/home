@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Трейд-ин - BalticDom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <header>
+      <div class="top-bar">
+          <p>СТРОЙТЕ СЧАСТЬЕ. ОСТАЛЬНОЕ ПОСТРОИМ МЫ!</p>
+          <div class="contact-info">
+              <span>📞 996-555-600-117</span>
+          </div>
+      </div>
+      <div class="main-header">
+          <div class="logo">BayaHouse</div>
+          <nav>
+              <a href="index.html">Проекты</a>
+              <a href="tradein.html">Trade-in</a>
+              <a href="smeta.html">Смета</a>
+              <a href="calculator.html">Калькулятор</a>
+              <a href="#info">Информация</a>
+              <a href="#about">О компании</a>
+              <a href="#contacts">Контакты</a>
+            
+          </nav>
+          <div class="search-bar">
+              <input type="text" placeholder="Поиск...">
+              <button>🔍</button>
+          </div>
+      </div>
+  </header>
+    <h1 class="h11" >Трейд-ин от BayaHouse</h1>
+ 
+
+  <section class="trade-in-benefits">
+    <h2>Преимущества трейд-ин:</h2>
+    <ol>
+      <li>Всеми юридическими вопросами по продаже старой квартиры и приобретению нового дома занимаемся мы.</li>
+      <li>Вы будете избавлены от необходимости самостоятельного поиска покупателя и утомительной цепочки сделок.</li>
+      <li>Если для строительства дома вам нужно дополнительное финансирование, мы поможем с оформлением кредита.</li>
+      <li>После сделки стоимость нового дома фиксируется и не зависит от колебаний рынка.</li>
+    </ol>
+  </section>
+
+  <section class="trade-in-calculator">
+    <h2>Рассчитайте стоимость трейд-ин</h2>
+    <form id="trade-in-form">
+      <label for="apartment-price">Стоимость вашей квартиры (C):</label>
+      <input type="number" id="apartment-price" placeholder="Например, 5 000 000" required>
+
+      <label for="new-home-price">Стоимость нового дома (C):</label>
+      <input type="number" id="new-home-price" placeholder="Например, 10 000 000" required>
+
+      <button type="button" onclick="calculateTradeIn()">Рассчитать</button>
+    </form>
+    <div id="trade-in-result">Введите данные для расчета</div>
+  </section>
+
+  <footer>
+    <p>BayaHouse</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+header {
+  background-color: #8dc63f;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.trade-in-benefits {
+  background-color: #ffffff;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trade-in-benefits h2 {
+  color: #8dc63f;
+}
+
+.trade-in-calculator {
+  background-color: #ffffff;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #555;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #8dc63f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #77a62d;
+}
+
+#trade-in-result {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  margin-top: 20px;
+}
+
+.h11{
+  display: flex;
+  justify-content: center;
+}
+
+</style>
+
+<script>
+    function calculateTradeIn() {
+  const apartmentPrice = parseFloat(document.getElementById("apartment-price").value);
+  const newHomePrice = parseFloat(document.getElementById("new-home-price").value);
+
+  if (isNaN(apartmentPrice) || isNaN(newHomePrice) || apartmentPrice <= 0 || newHomePrice <= 0) {
+    document.getElementById("trade-in-result").textContent = "Пожалуйста, введите корректные данные.";
+    return;
+  }
+
+  const remainingAmount = newHomePrice - apartmentPrice;
+
+  let resultMessage;
+  if (remainingAmount > 0) {
+    resultMessage = `Вам нужно будет доплатить: ${remainingAmount.toLocaleString()} C.`;
+  } else if (remainingAmount < 0) {
+    resultMessage = `Вы получите остаток: ${Math.abs(remainingAmount).toLocaleString()} C.`;
+  } else {
+    resultMessage = "Ваш трейд-ин полностью покрывает стоимость нового дома!";
+  }
+
+  document.getElementById("trade-in-result").textContent = resultMessage;
+}
+
+</script>

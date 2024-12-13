@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<header>
+    <div class="top-bar">
+        <p>СТРОЙТЕ СЧАСТЬЕ. ОСТАЛЬНОЕ ПОСТРОИМ МЫ!</p>
+        <div class="contact-info">
+            <span>📞 996-555-600-117</span>
+        </div>
+    </div>
+    <div class="main-header">
+        <div class="logo">BayaHouse</div>
+        <nav>
+            <a href="index.html">Проекты</a>
+            <a href="tradein.html">Trade-in</a>
+            <a href="smeta.html">Смета</a>
+            <a href="calculator.html">Калькулятор</a>
+            <a href="#info">Контакты</a>
+            <a href="#about">О компании</a>
+            <a href="contact.html">Контакты</a>
+        
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Поиск...">
+          
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="container">
+        <h1>Калькулятор Затрат на Постройку Дома</h1>
+        <form id="costForm">
+            <label for="materials">Стоимость материалов (в сомах):</label>
+            <input type="number" id="materials" placeholder="Введите стоимость материалов">
+
+            <label for="labor">Стоимость труда (в сомах):</label>
+            <input type="number" id="labor" placeholder="Введите стоимость труда">
+
+            <label for="land">Стоимость земли (в сомах):</label>
+            <input type="number" id="land" placeholder="Введите стоимость земли">
+
+            <label for="misc">Прочие расходы (в сомах):</label>
+            <input type="number" id="misc" placeholder="Введите прочие расходы">
+
+            <button type="button" onclick="calculateTotal()">Рассчитать Общие Затраты</button>
+        </form>
+        <div id="result" class="result" style="display: none;"></div>
+    </div>
+</body>
+</html>
+
+<style>
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e9ffe6;
+            border: 1px solid #c1f0c1;
+            border-radius: 5px;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+</style>
+
+<script>
+    function calculateTotal() {
+            const materials = parseFloat(document.getElementById('materials').value) || 0;
+            const labor = parseFloat(document.getElementById('labor').value) || 0;
+            const land = parseFloat(document.getElementById('land').value) || 0;
+            const misc = parseFloat(document.getElementById('misc').value) || 0;
+
+            const totalCost = materials + labor + land + misc;
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.textContent = `Общие затраты на постройку дома: ${totalCost.toLocaleString('ru-RU')} сом.`;
+        }
+</script>

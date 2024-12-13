@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный Кабинет</title>
+  <link rel="stylesheet" href="style.css">
+  <header>
+    <div class="top-bar">
+        <p>СТРОЙТЕ СЧАСТЬЕ. ОСТАЛЬНОЕ ПОСТРОИМ МЫ!</p>
+        <div class="contact-info">
+            <span>📞 996-555-600-117</span>
+        </div>
+    </div>
+    <div class="main-header">
+        <div class="logo">BayaHouse</div>
+        <nav>
+            <a href="index.html">Проекты</a>
+            <a href="tradein.html">Trade-in</a>
+            <a href="smeta.html">Смета</a>
+            <a href="calculator.html">Калькулятор</a>
+            <a href="#info">Контакты</a>
+            <a href="#about">О компании</a>
+            <a href="redistrasia.html">Регистрация</a>
+        
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Поиск...">
+            <button>🔍</button>
+        </div>
+    </div>
+</header>
+
+
+  
+</head>
+<body>
+  <div class="dashboard">
+    <h1>Личный Кабинет</h1>
+
+    <div class="user-info" id="userInfo">
+      <p><strong>Имя:</strong> <span id="userName"></span></p>
+      <p><strong>Email:</strong> <span id="userEmail"></span></p>
+      <p><strong>Возраст:</strong> <span id="userAge"></span></p>
+      
+      <button id="editButton">Редактировать</button>
+    </div>
+
+    <div class="edit-form" id="editForm" style="display: none;">
+      <label>
+        Имя:
+        <input type="text" id="inputName" value="Баргыбаев Нуртилек">
+      </label>
+      <label>
+        Email:
+        <input type="email" id="inputEmail" value="ivan@example.com">
+      </label>
+      <label>
+        Возраст:
+        <input type="number" id="inputAge" value="28">
+      </label>
+      
+      <button id="saveButton">Сохранить</button>
+    </div>
+  </div>
+
+  <script>
+    const userInfo = document.getElementById('userInfo');
+    const editForm = document.getElementById('editForm');
+
+    const userName = document.getElementById('userName');
+    const userEmail = document.getElementById('userEmail');
+    const userAge = document.getElementById('userAge');
+    const userBio = document.getElementById('userBio');
+
+    const inputName = document.getElementById('inputName');
+    const inputEmail = document.getElementById('inputEmail');
+    const inputAge = document.getElementById('inputAge');
+    const inputBio = document.getElementById('inputBio');
+
+    const editButton = document.getElementById('editButton');
+    const saveButton = document.getElementById('saveButton');
+
+    editButton.addEventListener('click', () => {
+      userInfo.style.display = 'none';
+      editForm.style.display = 'flex';
+    });
+
+    saveButton.addEventListener('click', () => {
+      userName.textContent = inputName.value;
+      userEmail.textContent = inputEmail.value;
+      userAge.textContent = inputAge.value;
+      userBio.textContent = inputBio.value;
+
+      editForm.style.display = 'none';
+      userInfo.style.display = 'flex';
+    });
+  </script>
+</body>
+</html>
+
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+    }
+
+    .dashboard {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+    }
+
+    h1 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .user-info, .edit-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>

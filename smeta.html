@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Строительная компания</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <p>СТРОЙТЕ СЧАСТЬЕ. ОСТАЛЬНОЕ ПОСТРОИМ МЫ!</p>
+            <div class="contact-info">
+                <span>📞 996-555-600-117</span>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="logo">BayaHouse</div>
+            <nav >
+                <a href="index.html">Проекты</a>
+                <a href="tradein.html">Trade-in</a>
+                <a href="smeta.html">Смета</a>
+                <a href="calculator.html">Калькулятор</a>
+                <a href="#info">Информация</a>
+                <a href="#about">О компании</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Поиск...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="filter-section">
+        <h3>Фильтр параметров</h3>
+
+        <!-- Слайдер цены -->
+        <label for="price-range">Цена (сом.):</label>
+        <input type="range" id="price-range" min="0" max="20000000" step="100000" value="1000000" oninput="updatePriceOutput()">
+        <div>от <span id="price-min">0</span> до <span id="price-max">1000000</span> сом.</div>
+
+        <!-- Слайдер площади -->
+        <label for="area-range">Площадь, м²:</label>
+        <input type="range" id="area-range" min="20" max="500" step="10" value="100" oninput="updateAreaOutput()">
+        <div>от <span id="area-min">20</span> до <span id="area-max">100</span> м²</div>
+
+        <!-- Чекбоксы для количества спален -->
+        <h4>Спальни:</h4>
+        <label><input type="checkbox" name="bedrooms" value="1"> 1</label>
+        <label><input type="checkbox" name="bedrooms" value="2"> 2</label>
+        <label><input type="checkbox" name="bedrooms" value="3"> 3</label>
+        <label><input type="checkbox" name="bedrooms" value="4+"> 4+</label>
+
+        <!-- Чекбоксы для санузлов -->
+        <h4>Санузлы:</h4>
+        <label><input type="checkbox" name="bathrooms" value="1"> 1</label>
+        <label><input type="checkbox" name="bathrooms" value="2"> 2</label>
+        <label><input type="checkbox" name="bathrooms" value="3"> 3</label>
+        <label><input type="checkbox" name="bathrooms" value="4+"> 4+</label>
+
+        <!-- Кнопка для расчета -->
+        <button onclick="calculate()">Рассчитать</button>
+
+        <!-- Результат -->
+        <div id="result">Выберите параметры для расчета.</div>
+
+        <!-- Карточки домов -->
+        <div id="house-cards" class="house-cards"></div>
+    </div>
+    <footer class="footer">
+       
+        <div class="footer-socials1">
+        
+            <a  href="https://wa.me/996555600117" target="_blank" class="social-link"> 
+              <img height="50px" src="./photo/pngwing.com.png" alt="WhatsApp">
+            </a>
+            
+            <a href="https://instagram.com" target="_blank" class="social-link"> 
+              <img height="50px" src="./photo/pngwing.com (1).png" alt="Instagram">
+            </a>
+            <a href="https://vk.com" target="_blank" class="social-link"> 
+              <img height="50px" src="./photo/pngwing.com (2).png" alt="VK">
+            </a>
+            <a  href="https://twitter.com"class="social-link"> 
+              <img height="50px" src="./photo/pngwing.com (3).png" >
+            </a>
+          </div>
+            
+      </footer>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .filter-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-section h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #8dc63f;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #77a62d;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .house-cards {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .house-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .house-card h4 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .house-card p {
+            margin: 0;
+            color: #555;
+        }
+    </style>
+
+    <script>
+        const houses = [
+            { id: 1, price: 5000000, area: 120, bedrooms: 3, bathrooms: 2 },
+            { id: 2, price: 10000000, area: 300, bedrooms: 4, bathrooms: 3 },
+            { id: 3, price: 1500000, area: 50, bedrooms: 1, bathrooms: 1 },
+            { id: 4, price: 7000000, area: 200, bedrooms: 4, bathrooms: 3 },
+        ];
+
+        function calculate() {
+            const price = document.getElementById("price-range").value;
+            const area = document.getElementById("area-range").value;
+            const bedroomCheckboxes = document.querySelectorAll("input[name='bedrooms']:checked");
+            const bedrooms = Array.from(bedroomCheckboxes).map((checkbox) => checkbox.value);
+            const bathroomCheckboxes = document.querySelectorAll("input[name='bathrooms']:checked");
+            const bathrooms = Array.from(bathroomCheckboxes).map((checkbox) => checkbox.value);
+
+            const filteredHouses = houses.filter((house) => {
+                return (
+                    house.price <= price &&
+                    house.area <= area &&
+                    (bedrooms.length === 0 || bedrooms.includes(house.bedrooms.toString())) &&
+                    (bathrooms.length === 0 || bathrooms.includes(house.bathrooms.toString()))
+                );
+            });
+
+            const resultDiv = document.getElementById("result");
+            const houseCardsDiv = document.getElementById("house-cards");
+
+            if (filteredHouses.length > 0) {
+                const randomHouse = filteredHouses[Math.floor(Math.random() * filteredHouses.length)];
+                resultDiv.textContent = `Мы нашли для вас дом!`;
+                houseCardsDiv.innerHTML = `
+                    <div class="house-card">
+                        <h4>Дом #${randomHouse.id}</h4>
+                        <p>Цена: ${randomHouse.price} сом.</p>
+                        <p>Площадь: ${randomHouse.area} м²</p>
+                        <p>Спальни: ${randomHouse.bedrooms}</p>
+                        <p>Санузлы: ${randomHouse.bathrooms}</p>
+                    </div>
+                `;
+            } else {
+                resultDiv.textContent = "Нет подходящих домов по выбранным параметрам.";
+                houseCardsDiv.innerHTML = "Дачный дом";
+            }
+        }
+    </script>
+</body>
+</html>
