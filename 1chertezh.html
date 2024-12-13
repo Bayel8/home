@@ -31,33 +31,33 @@
                 <button>🔍</button>
             </div>
         </div>
-   
-        <h1 class="title">MUR MUR, 119 M2</h1>
+   <main>
+        <h1 class="title">Деревянный дом</h1>
     <div class="container">
        
-  <img src="./photo/дерявенный дом.jpg" alt="">
+  <img class="imghome" src="./photo/дерявенный дом.jpg" alt="">
         <div class="main-content">
-           <img src="." alt="">
 
             <div class="details">
                 <h3>Характеристики</h3>
                 <p><strong>Площадь, м²:</strong> 119</p>
                 <p><strong>Спальни:</strong> 3</p>
-                <p><strong>Санузлы:</strong> 3</p>
+                <p><strong>Санузлы:</strong> 2</p>
                 <p><strong>Материал стен:</strong> Оцилиндрованное бревно</p>
                 <p><strong>Этажность:</strong> 2</p>
 
                 <h3>Описание</h3>
                 <p>Можем построить этот дом из бревна, бруса, клееного бруса и газобетона.</p>
 
-                <button>Выбрать материал</button>
-                <button>Зарезервировать цену</button>
+                <button class="overlay1" ><a href="choose1.html">Связаться с менеджером</a></button>
+                
             </div>
         </div>
     </div>
-    <footer>
+</main>
+    <footer class="footer1" >
         <div class="footer-socials">
-            <h4>Мы в социальных сетях</h4>
+         
             <a  href="https://wa.me/996555600117" target="_blank" class="social-link">
               <img height="50px" src="./photo/whatsapp.png">
             </a>
@@ -74,6 +74,37 @@
           </div>
     </footer>
     <style>
+
+.main-content{
+    padding-bottom: 30px;
+}
+
+
+.imghome{
+    padding-bottom: 30px;
+}
+
+.footer1 {
+  background-color: #272727;
+  padding: 30px 10px;
+}
+
+.footer-socials  {
+   display: flex;
+   justify-content: center;  
+   gap: 10px;
+  
+}
+
+
+.overlay1 button {
+    text-decoration: none;
+    color: white;
+}
+
+        .main{
+       background-color: #007BFF;
+        }
 
 .footer {
   background-color: #272727;
@@ -232,7 +263,7 @@ nav a:hover {
         .details button {
             display: block;
             width: 100%;
-            padding: 10px;
+            padding: 7px;
             margin-top: 10px;
             background-color: #007BFF;
             color: #fff;
@@ -262,7 +293,7 @@ nav a:hover {
             gap: 70px; /* Расстояние между картинкой и текстом */
         }
         .container img {
-            max-width: 700px; /* Ограничение ширины картинки */
+            max-width: 720px; /* Ограничение ширины картинки */
             height: auto;
         }
         .container .text {
