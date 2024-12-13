@@ -97,7 +97,6 @@ nav a:hover {
     background-color: #555;
 }
 
-/* Респонсивность */
 @media (max-width: 768px) {
     .main-header {
         flex-wrap: wrap;
