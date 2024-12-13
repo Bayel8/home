@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   
+   <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -31,14 +31,11 @@
                 <button>🔍</button>
             </div>
         </div>
-    </header>
-
-
-    </header>
-    
-    <div class="container">
+   
         <h1 class="title">MUR MUR, 119 M2</h1>
-
+    <div class="container">
+       
+  <img src="./photo/дерявенный дом.jpg" alt="">
         <div class="main-content">
            <img src="." alt="">
 
@@ -58,7 +55,31 @@
             </div>
         </div>
     </div>
+    <footer>
+        <div class="footer-socials">
+            <h4>Мы в социальных сетях</h4>
+            <a  href="https://wa.me/996555600117" target="_blank" class="social-link">
+              <img height="50px" src="./photo/whatsapp.png">
+            </a>
+            
+            <a href="https://instagram.com" target="_blank" class="social-link">
+              <img height="50px" src="./photo/insta.png" >
+            </a>
+            <a href="https://vk.com" target="_blank" class="social-link">
+              <img height="50px" src="./photo/vk.png" >
+            </a>
+            <a  href="https://twitter.com"class="social-link">
+              <img height="50px" src="./photo/twit.png" >
+            </a>
+          </div>
+    </footer>
     <style>
+
+.footer {
+  background-color: #272727;
+  padding: 40px 20px;
+}
+
        body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -233,6 +254,19 @@ nav a:hover {
             .image, .details {
                 flex: 1;
             }
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 70px; /* Расстояние между картинкой и текстом */
+        }
+        .container img {
+            max-width: 700px; /* Ограничение ширины картинки */
+            height: auto;
+        }
+        .container .text {
+            max-width: 400px; /* Ограничение ширины текста */
         }
     </style>
 
