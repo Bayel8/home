@@ -16,7 +16,7 @@
         </div>
         <div class="main-header">
             <div class="logo">BayaHouse</div>
-            <nav >
+            <nav>
                 <a href="index.html">Проекты</a>
                 <a href="tradein.html">Trade-in</a>
                 <a href="smeta.html">Смета</a>
@@ -36,13 +36,13 @@
 
         <!-- Слайдер цены -->
         <label for="price-range">Цена (сом.):</label>
-        <input type="range" id="price-range" min="0" max="20000000" step="100000" value="1000000" oninput="updatePriceOutput()">
-        <div>от <span id="price-min">0</span> до <span id="price-max">1000000</span> сом.</div>
+        <input type="range" id="price-range" min="0" max="20000000" step="100000" value="2000000" oninput="updatePriceOutput()">
+        <div>от <span id="price-min">0</span> до <span id="price-value">2000000</span> сом.</div>
 
         <!-- Слайдер площади -->
         <label for="area-range">Площадь, м²:</label>
         <input type="range" id="area-range" min="20" max="500" step="10" value="100" oninput="updateAreaOutput()">
-        <div>от <span id="area-min">20</span> до <span id="area-max">100</span> м²</div>
+        <div>от <span id="area-min">20</span> до <span id="area-value">100</span> м²</div>
 
         <!-- Чекбоксы для количества спален -->
         <h4>Спальни:</h4>
@@ -67,101 +67,23 @@
         <!-- Карточки домов -->
         <div id="house-cards" class="house-cards"></div>
     </div>
+
     <footer class="footer">
-       
         <div class="footer-socials1">
-        
-            <a  href="https://wa.me/996555600117" target="_blank" class="social-link"> 
-              <img height="50px" src="./photo/whatsapp.png" alt="WhatsApp">
+            <a href="https://wa.me/996555600117" target="_blank" class="social-link">
+                <img height="50px" src="./photo/whatsapp.png" alt="WhatsApp">
             </a>
-            
-            <a href="https://instagram.com" target="_blank" class="social-link"> 
-              <img height="50px" src="./photo/insta.png" alt="Instagram">
+            <a href="https://instagram.com" target="_blank" class="social-link">
+                <img height="50px" src="./photo/insta.png" alt="Instagram">
             </a>
-            <a href="https://vk.com" target="_blank" class="social-link"> 
-              <img height="50px" src="./photo/vk.png" alt="VK">
+            <a href="https://vk.com" target="_blank" class="social-link">
+                <img height="50px" src="./photo/vk.png" alt="VK">
             </a>
-            <a  href="https://twitter.com"class="social-link"> 
-              <img height="50px" src="./photo/twit.png" >
+            <a href="https://twitter.com" class="social-link">
+                <img height="50px" src="./photo/twit.png">
             </a>
-          </div>
-            
-      </footer>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .filter-section {
-            background-color: #f9f9f9;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .filter-section h3 {
-            margin-top: 0;
-            color: #333;
-        }
-
-        label {
-            display: block;
-            margin: 10px 0 5px;
-            color: #555;
-        }
-
-        input[type="range"] {
-            width: 100%;
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #8dc63f;
-            border: none;
-            color: white;
-            font-size: 16px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #77a62d;
-        }
-
-        #result {
-            margin-top: 20px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .house-cards {
-            margin-top: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .house-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 10px;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .house-card h4 {
-            margin: 0 0 10px;
-            color: #333;
-        }
-
-        .house-card p {
-            margin: 0;
-            color: #555;
-        }
-    </style>
+        </div>
+    </footer>
 
     <script>
         const houses = [
@@ -170,6 +92,18 @@
             { id: 3, price: 1500000, area: 50, bedrooms: 1, bathrooms: 1 },
             { id: 4, price: 7000000, area: 200, bedrooms: 4, bathrooms: 3 },
         ];
+
+        function updatePriceOutput() {
+            const priceRange = document.getElementById("price-range");
+            const priceValue = document.getElementById("price-value");
+            priceValue.textContent = priceRange.value;
+        }
+
+        function updateAreaOutput() {
+            const areaRange = document.getElementById("area-range");
+            const areaValue = document.getElementById("area-value");
+            areaValue.textContent = areaRange.value;
+        }
 
         function calculate() {
             const price = document.getElementById("price-range").value;
@@ -192,22 +126,105 @@
             const houseCardsDiv = document.getElementById("house-cards");
 
             if (filteredHouses.length > 0) {
-                const randomHouse = filteredHouses[Math.floor(Math.random() * filteredHouses.length)];
                 resultDiv.textContent = `Мы нашли для вас дом!`;
-                houseCardsDiv.innerHTML = `
+
+                houseCardsDiv.innerHTML = filteredHouses.map(house => {
+                    return `
                     <div class="house-card">
-                        <h4>Дом #${randomHouse.id}</h4>
-                        <p>Цена: ${randomHouse.price} сом.</p>
-                        <p>Площадь: ${randomHouse.area} м²</p>
-                        <p>Спальни: ${randomHouse.bedrooms}</p>
-                        <p>Санузлы: ${randomHouse.bathrooms}</p>
-                    </div>
-                `;
-            } else {
+                        <h4>Дом #7</h4>
+                        <p>Цена: 1500000 сом.</p>
+                        <p>Площадь: 90 м²</p>
+                        <p>Спальни: 1</p>
+                        <p>Санузлы: 1</p>
+                    </div> 
+                  
             
-                houseCardsDiv.innerHTML = "Дачный дом";
+                    `;
+                }).join('');
+            } else {
+                resultDiv.textContent = "Найден дом под номером 7.";
+                houseCardsDiv.innerHTML = "";
             }
+
+
         }
     </script>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .filter-section {
+        background-color: #f9f9f9;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .filter-section h3 {
+        margin-top: 0;
+        color: #333;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0 5px;
+        color: #555;
+    }
+
+    input[type="range"] {
+        width: 100%;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #8dc63f;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #77a62d;
+    }
+
+    #result {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .house-cards {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .house-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .house-card h4 {
+        margin: 0 0 10px;
+        color: #333;
+    }
+
+    .house-card p {
+        margin: 0;
+        color: #555;
+    }
+</style>
+
 </body>
 </html>

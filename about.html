@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title> <link rel="stylesheet" href="style.css">
+    <title>О компании | BayaHouse</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -20,10 +21,8 @@
                 <a href="tradein.html">Trade-in</a>
                 <a href="smeta.html">Смета</a>
                 <a href="calculator.html">Калькулятор</a>
-          
                 <a href="about.html">О компании</a>
                 <a href="contact.html">Контакты</a>
-            
             </nav>
             <div class="search-bar">
                 <input type="text" placeholder="Поиск...">
@@ -32,79 +31,182 @@
         </div>
     </header>
 
-   
-    
+    <main>
+        <section id="company-info">
+            <h1>О компании</h1>
+            <p>Строительная компания <strong>BayaHouse</strong> предлагает комплексные решения в сфере строительства, включая проектирование, строительство жилых и коммерческих объектов, а также послепродажное обслуживание. Мы работаем с вниманием к деталям, качеству и потребностям наших клиентов.</p>
+        </section>
 
+        <section id="our-mission">
+            <h2>Наша миссия</h2>
+            <p>Наша цель — создавать дома, в которых будет комфортно жить, работать и развиваться. Мы стремимся к тому, чтобы каждый проект был не просто зданием, а уютным, функциональным пространством для жизни. Мы ориентируемся на устойчивое развитие, экологичные технологии и высочайшие стандарты безопасности.</p>
+        </section>
+
+        <section id="services">
+            <h2>Наши услуги</h2>
+            <ul>
+                <li><strong>Проектирование</strong>: Разработка индивидуальных архитектурных решений, создание проектов домов, зданий и ландшафтных участков.</li>
+                <li><strong>Строительство</strong>: Полный цикл строительства жилых и коммерческих объектов с использованием современных материалов и технологий.</li>
+                <li><strong>Ремонт и отделка</strong>: Мы предлагаем услуги по ремонту, отделке и реставрации объектов любой сложности.</li>
+                <li><strong>Консультации и оценка</strong>: Профессиональная консультация по всем вопросам строительства, а также расчет смет и оценка стоимости работ.</li>
+            </ul>
+        </section>
+
+       
+
+        <section id="contact-us">
+            <h2>Свяжитесь с нами</h2>
+            <p>Если у вас есть вопросы или вам требуется консультация, не стесняйтесь обращаться к нам. Мы всегда рады помочь!</p>
+            <a href="contact.html" class="contact-link">Перейти к контактам</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-socials">
+            <a href="https://wa.me/996555600117" target="_blank" class="social-link">
+                <img height="50px" src="photo/whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-link">
+                <img height="50px" src="photo/insta.png" alt="Instagram">
+            </a>
+            <a href="https://vk.com" target="_blank" class="social-link">
+                <img height="50px" src="photo/vk.png" alt="VK">
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-link">
+                <img height="50px" src="photo/twit.png" alt="Twitter">
+            </a>
+        </div>
+    </footer>
+
+    <style>
+.contact-link{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: 550px;
+   margin-right: 550px;
+   margin-top: 30px;
+}
+
+.contact-link :hover{
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+        
+        /* General reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+main {
+    padding: 30px;
+    background-color: white;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 22px;
+    color: #2980b9;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/* Contact section */
+.contact-link {
+
+    text-decoration: none;
+    background-color: #3498db;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.contact-link:hover {
+    background-color: #2980b9;
+}
+
+/* Footer styles */
+footer {
+    background-color: #34495e;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-socials a {
+    margin: 0 15px;
+    display: inline-block;
+}
+
+.footer-socials img {
+    height: 40px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-bar {
+        margin-top: 10px;
+    }
+
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .contact-link {
+        display: block;
+        margin: 20px auto;
+    }
+}
+
+    </style>
+
+    <script>
+        // Дополнительные скрипты, если нужно, например, для анимаций или модальных окон.
+    </script>
 </body>
 </html>
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f9;
-        color: #333;
-    }
-    header {
-        background-color: #0044cc;
-        color: #fff;
-        padding: 10px 20px;
-        text-align: center;
-    }
-    header h1 {
-        margin: 0;
-        font-size: 2.5em;
-    }
-    nav {
-        background-color: #003399;
-        overflow: hidden;
-    }
-    nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-    }
-    nav ul li {
-        padding: 14px 20px;
-    }
-    nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    nav ul li a:hover {
-        text-decoration: underline;
-    }
-    main {
-        padding: 20px;
-    }
-    .home-card {
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        margin: 20px 0;
-        padding: 15px;
-        background-color: #fff;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-    .home-card img {
-        max-width: 200px;
-        border-radius: 8px;
-    }
-    .home-card h2 {
-        margin: 0 0 10px 0;
-    }
-    footer {
-        text-align: center;
-        padding: 10px 20px;
-        background-color: #003399;
-        color: #fff;
-    }
-    footer p {
-        margin: 0;
-    }
-</style>
