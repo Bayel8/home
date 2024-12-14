@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <p>СТРОЙТЕ СЧАСТЬЕ. ОСТАЛЬНОЕ ПОСТРОИМ МЫ!</p>
+            <div class="contact-info">
+                <span>📞 996-555-600-117</span>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="logo">BayaHouse</div>
+            <nav class="navindex" >
+                <a href="index.html">Проекты</a>
+                <a href="tradein.html">Trade-in</a>
+                <a href="smeta.html">Смета</a>
+                <a href="calculator.html">Калькулятор</a>
+                <a href="about.html">О компании</a>
+                <a href="contact.html">Контакты</a>
+            
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Поиск...">
+                <button>🔍</button>
+            </div>
+        </div>
+   <main>
+        <h1 class="title">Коттеджи </h1>
+    <div class="container">
+       
+  <img class="imghome" src="./photo/коттедж.jpg" alt="">
+        <div class="main-content">
+
+            <div class="details">
+                <h3>Характеристики</h3>
+                <p><strong>Площадь, м²:</strong> 110</p>
+                <p><strong>Спальни:</strong> 4</p>
+                <p><strong>Санузлы:</strong> 1</p>
+                <p><strong>Материал стен:</strong> Черное дерево</p>
+                <p><strong>Этажность:</strong> 2</p>
+                <p><strong>Балкон:</strong> Нет</p>
+
+                <h3>Описание</h3>
+                <p>Дом для отдыха  .</p>
+                <button class="overlay1" ><a  class="overlay1" href="contact.html">Связаться с менеджером</a></button>
+                
+            </div>
+        </div>
+    </div>
+</main>
+    <footer class="footer1" >
+        <div class="footer-socials">
+         
+            <a  href="https://wa.me/996555600117" target="_blank" class="social-link">
+              <img height="50px" src="./photo/whatsapp.png">
+            </a>
+            
+            <a href="https://instagram.com" target="_blank" class="social-link">
+              <img height="50px" src="./photo/insta.png" >
+            </a>
+            <a href="https://vk.com" target="_blank" class="social-link">
+              <img height="50px" src="./photo/vk.png" >
+            </a>
+            <a  href="https://twitter.com"class="social-link">
+              <img height="50px" src="./photo/twit.png" >
+            </a>
+          </div>
+    </footer>
+</body>
+   
+    <style>
+.body{
+    background-color: blue;
+}
+
+.main-content{
+    padding-bottom: 30px;
+}
+
+
+.imghome{
+    padding-bottom: 30px;
+}
+
+.footer1 {
+  background-color: #272727;
+  padding: 30px 10px;
+}
+
+.footer-socials  {
+   display: flex;
+   justify-content: center;  
+   gap: 10px;
+  
+}
+
+
+.overlay1 a {
+  
+    text-decoration: none;
+    color: white;
+}
+
+        .main{
+       background-color: #007BFF;
+        }
+
+.footer {
+  background-color: #272727;
+  padding: 40px 20px;
+}
+
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Верхняя панель */
+.top-bar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.top-bar p {
+    margin: 0;
+}
+
+.contact-info {
+    font-weight: bold;
+}
+
+/* Основной хедер */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #FFF;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #3A2C25;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+.navindex{
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+    background-color: #3A2C25;
+    border-radius: 5px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 0;
+}
+
+.search-bar input {
+    padding: 5px;
+   
+    border: 1px solid #CCC;
+    border-radius: 5px;
+
+}
+
+.search-bar button {
+    background-color: #3A2C25;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-wrap: wrap;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .image {
+            flex: 2;
+            max-width: 100%;
+        }
+
+        .details {
+            width: 400px;
+            flex: 1;
+            background-color: #f3f3f3;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .details h3 {
+            margin-bottom: 15px;
+        }
+
+        .details p {
+            margin: 5px 0;
+        }
+
+        .details button {
+            display: block;
+            width: 100%;
+            padding: 7px;
+            margin-top: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .details button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .image, .details {
+                flex: 1;
+            }
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 220px; /* Расстояние между картинкой и текстом */
+            margin-left: 50px;
+        }
+        .container img {
+            max-width: 550px; /* Ограничение ширины картинки */
+            height: auto;
+            margin-right: 0px;
+            border-radius: 10px;
+        }
+        .container .text {
+            max-width: 350px; /* Ограничение ширины текста */
+        }
+    </style>
+
+</body>
+</html>
