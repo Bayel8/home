@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <header>
+        <link rel="stylesheet" href="style.css">
+        <div class="top-bar">
+            <p>СТРОЙТЕ СЧАСТЬЕ. ОСТАЛЬНОЕ ПОСТРОИМ МЫ!</p>
+            <div class="contact-info">
+                <span>📞 996-555-600-117</span>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="logo">BayaHouse</div>
+            <nav class="navindex" >
+                <a href="index.html">Проекты</a>
+                <a href="tradein.html">Trade-in</a>
+                <a href="smeta.html">Смета</a>
+                <a href="calculator.html">Калькулятор</a>
+                <a href="about.html">О компании</a>
+                <a href="contact.html">Контакты</a>
+                <a href="calculator2.0.html">Калькулятор</a>
+            
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Поиск...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+    <title>Калькулятор строительных материалов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .result h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .result p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор строительных материалов</h1>
+        <label for="area">Введите площадь дома (м²):</label>
+        <input type="number" id="area" placeholder="Введите площадь" min="1">
+        <button onclick="calculateMaterials()">Рассчитать</button>
+
+        <div class="result" id="result">
+            <p>Укажите площадь, чтобы увидеть расчёты.</p>
+        </div>
+    </div>
+
+    <script>
+        function calculateMaterials() {
+            const area = document.getElementById('area').value;
+            const resultDiv = document.getElementById('result');
+
+            if (!area || area <= 0) {
+                resultDiv.innerHTML = '<p style="color: red;">Введите корректную площадь!</p>';
+                return;
+            }
+
+            // Примерные нормы расхода материалов
+            const cementPerSqM = 0.2; // тонн цемента на м²
+            const bricksPerSqM = 50;  // кирпичей на м²
+            const formworkPerSqM = 0.5; // м² опалубки на м²
+
+            const cement = (area * cementPerSqM).toFixed(2);
+            const bricks = Math.ceil(area * bricksPerSqM);
+            const formwork = (area * formworkPerSqM).toFixed(2);
+
+            resultDiv.innerHTML = `
+                <h2>Результаты расчёта:</h2>
+                <p><strong>Цемент:</strong> ${cement} тонн</p>
+                <p><strong>Кирпичи:</strong> ${bricks} шт.</p>
+                <p><strong>Опалубка:</strong> ${formwork} м²</p>
+            `;
+        }
+    </script>
+</body>
+</html>
