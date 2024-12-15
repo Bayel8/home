@@ -326,3 +326,8 @@ h2 {
     color: white;
     margin-top: 20px;
   }
+
+  .h11{
+    display: flex;
+    justify-content: center;
+  }
