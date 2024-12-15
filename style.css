@@ -262,3 +262,67 @@ h2 {
     gap: 10px;
     margin-right: 0px;
 }
+
+/* трейд ин */
+
+.trade-in-benefits {
+    background-color: #ffffff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .trade-in-benefits h2 {
+    color: #8dc63f;
+  }
+
+  .trade-in-calculator {
+    background-color: #ffffff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .trade-in-button {
+    background-color: #8dc63f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .trade-in-button :hover {
+    background-color: #6da413;
+  }
+
+  #trade-in-result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .footer-tradein {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+  }

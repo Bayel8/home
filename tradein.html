@@ -55,13 +55,13 @@
       <label for="new-home-price">Стоимость нового дома (C):</label>
       <input type="number" id="new-home-price" placeholder="Например, 10 000 000" required>
 
-      <button type="button" onclick="calculateTradeIn()">Рассчитать</button>
+      <button class="trade-in-button" type="button" onclick="calculateTradeIn()">Рассчитать</button>
     </form>
     <div id="trade-in-result">Введите данные для расчета</div>
   </section>
 
 
-    <footer class="footer">
+    <footer class="footer-tradein">
       <p>BayaHouse</p>
       <div class="footer-socials1">
       
@@ -86,120 +86,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
-<style>
-    body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f7f7f7;
-  color: #333;
-}
-
-header {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-h1 {
-  margin: 0;
-}
-
-.trade-in-benefits {
-  background-color: #ffffff;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 800px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.trade-in-benefits h2 {
-  color: #8dc63f;
-}
-
-.trade-in-calculator {
-  background-color: #ffffff;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 800px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-label {
-  display: block;
-  margin: 10px 0 5px;
-  color: #555;
-}
-
-input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #8dc63f;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #77a62d;
-}
-
-#trade-in-result {
-  margin-top: 20px;
-  font-weight: bold;
-  color: #333;
-}
-
-footer {
-  text-align: center;
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
-  margin-top: 20px;
-}
-
-.h11{
-  display: flex;
-  justify-content: center;
-}
-
-</style>
-
-<script>
-    function calculateTradeIn() {
-  const apartmentPrice = parseFloat(document.getElementById("apartment-price").value);
-  const newHomePrice = parseFloat(document.getElementById("new-home-price").value);
-
-  if (isNaN(apartmentPrice) || isNaN(newHomePrice) || apartmentPrice <= 0 || newHomePrice <= 0) {
-    document.getElementById("trade-in-result").textContent = "Пожалуйста, введите корректные данные.";
-    return;
-  }
-
-  const remainingAmount = newHomePrice - apartmentPrice;
-
-  let resultMessage;
-  if (remainingAmount > 0) {
-    resultMessage = `Вам нужно будет доплатить: ${remainingAmount.toLocaleString()} C.`;
-  } else if (remainingAmount < 0) {
-    resultMessage = `Вы получите остаток: ${Math.abs(remainingAmount).toLocaleString()} C.`;
-  } else {
-    resultMessage = "Ваш трейд-ин полностью покрывает стоимость нового дома!";
-  }
-
-  document.getElementById("trade-in-result").textContent = resultMessage;
-}
-
-</script>
