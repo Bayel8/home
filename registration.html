@@ -46,7 +46,7 @@
    </div>
    <div class="links"> 
     <p>Alredy Have Account ?</p>
-    <button id="signInButton">Sign In </button>
+    <button class="but1" id="signInButton">Sign In </button>
    </div>
 </div>
 </div>
@@ -80,7 +80,7 @@
 </div>
 <div class="links"> 
 <p>Don't have account yet?</p>
-<button id="signUpButton">Sign Up </button>
+<button class="but1" id="signUpButton">Sign Up </button>
 </div>
 </div>
 
@@ -105,6 +105,29 @@
 </html>
 
 <style>
+.but1{
+    background-color: hsl(327,90%,28%); /* Цвет фона */
+    color: white; /* Цвет текста */
+    font-size: 16px; /* Размер шрифта */
+    padding: 12px 24px; /* Отступы */
+    border: none; /* Без рамки */
+    border-radius: 8px; /* Радиус закругления углов */
+    cursor: pointer; /* Курсор при наведении */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+    transition: background-color 0.3s, transform 0.2s; /* Анимация */
+}
+
+.but1 :hover{
+    background-color: hsl(327,90%,28%); /* Цвет фона при наведении */
+    transform: scale(1.05); /* Увеличение кнопки */
+}
+
+.but1:active {
+    background-color: hsl(327,90%,28%); /* Цвет фона при нажатии */
+    transform: scale(0.95); /* Легкое уменьшение кнопки */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Уменьшение тени */
+}
+
     *{
         margin: 0;
         padding: 0;
