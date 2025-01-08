@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Строительная компания</title>
-    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <header>
         <div class="top-bar">
             <p>СТРОЙТЕ СЧАСТЬЕ. ОСТАЛЬНОЕ ПОСТРОИМ МЫ!</p>
             <div class="contact-info">
-                <span>📞 996-555-600-117</span>
+               
             </div>
         </div>
         <div class="main-header">
@@ -24,8 +24,7 @@
                 <a href="calculator2.0.html">Калькулятор</a>
                 <a href="about.html">О компании</a>
                 <a href="contact.html">Контакты</a>
-                <a href="registration.html">Регистрация</a>
-               
+              
             
             </nav>
             <div class="search-bar">
@@ -185,10 +184,10 @@
         </div>
       
         <div class="footer-socials">
-          <h4>Мы в социальных сетях</h4>
-          <a  href="https://wa.me/996555600117" target="_blank" class="social-link">
+        
+          <a href="https://wa.me/996559333704?text=Здравствуйте!%20Я%20заинтересован%20в%20покупке%20дачного%20дома.%20Пожалуйста,%20предоставьте%20мне%20информацию." target="_blank" class="social-link">
             <img height="50px" src="./photo/whatsapp.png">
-          </a>
+        </a>
           
           <a href="https://instagram.com" target="_blank" class="social-link">
             <img height="50px" src="./photo/insta.png" >
@@ -201,6 +200,193 @@
           </a>
         </div>
       </footer>
+      <style>
+       
+        .card img {
+    width: 100%;
+    height: 200px; /* Фиксированная высота для единообразия */
+    object-fit: cover; /* Обрезка изображения, чтобы оно поместилось в указанные размеры */
+}
+
+.footer-block img {
+    width: 100%;
+    height: 150px; /* Фиксированная высота для изображений в футере */
+    object-fit: cover; /* Обрезка изображения для пропорций */
+}
+        /* Общие стили для мобильных устройств и планшетов */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Шапка */
+header {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-bar {
+    font-size: 14px;
+    text-align: center;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.navindex {
+    display: flex;
+    gap: 15px;
+}
+
+.navindex a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.search-bar input {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 5px;
+}
+
+/* Секции */
+.projects {
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden; /* Обрезка содержимого, если оно выходит за границы */
+}
+
+.card img {
+    width: 100%;
+    height: 200px; /* Фиксированная высота для единообразия */
+    object-fit: cover; /* Обрезка изображения, чтобы оно соответствовало размерам */
+    margin: 0; /* Убираем возможные внешние отступы */
+    display: block; /* Убираем возможные пробелы, создаваемые inline-block */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin: 0; /* Убираем отступы */
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3, .overlay button a {
+    margin: 0; /* Убираем отступы у текстов и кнопок */
+}
+
+
+/* Footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-block {
+    width: 30%;
+}
+
+.footer-socials {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.footer-socials a img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navindex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .search-bar {
+        margin-top: 10px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-block {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-socials {
+        flex-direction: column;
+    }
+}
+
+/* Медиазапросы для мобильных устройств с очень маленьким экраном */
+@media (max-width: 480px) {
+    .navindex a {
+        font-size: 14px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    .footer-socials a img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+      </style>
          
 </body>
 </html>

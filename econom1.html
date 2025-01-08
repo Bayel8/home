@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Мы строим экономичные дачные дома с использованием качественных материалов и современных технологий.">
+    <title>Экономичные дачные дома | DOMTEX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: #444;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: #f4f4f4;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            margin: 0;
+            font-size: 2rem;
+            color: #444;
+        }
+
+        .about, .features, .contact {
+            padding: 20px 0;
+        }
+
+        h3 {
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .feature-item {
+            flex: 1 1 calc(33.333% - 15px);
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .feature-item h4 {
+            margin-top: 0;
+        }
+
+        .contact p {
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background: #444;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #666;
+        }
+
+        footer {
+            background: #444;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .feature-list {
+                flex-direction: column;
+            }
+
+            .feature-item {
+                flex: 1 1 100%;
+            }
+
+            .btn {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 0.9rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .container {
+                width: 95%;
+            }
+
+            header h1 {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                font-size: 0.8rem;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DOMTEX</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Строительство экономичных дачных домов</h2>
+                <p>Качество, надежность и доступная цена - наша философия.</p>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <h3>Что мы делаем?</h3>
+                <p>Наша компания специализируется на строительстве дачных домов, которые сочетают в себе:
+                </p>
+                <ul>
+                    <li>Доступную стоимость;</li>
+                    <li>Качественные материалы;</li>
+                    <li>Энергоэффективные технологии;</li>
+                    <li>Эстетичный дизайн и практичность.</li>
+                </ul>
+                <p>Мы помогаем каждому клиенту создать комфортное пространство для отдыха и жизни на природе.</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h3>Наши преимущества</h3>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <section class="features">
+                            <div class="container">
+                                <h3>Наши преимущества</h3>
+                                <div class="feature-list">
+                                    <div class="feature-item">
+                                        <h4>Индивидуальный подход</h4>
+                                        <p>Проектируем дома под ваши потребности и бюджет.</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Быстрое строительство</h4>
+                                        <p>Готовые дома за короткие сроки без потери качества.</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Гарантия качества</h4>
+                                        <p>Используем только проверенные материалы и технологии.</p>
+                                    </div>
+                                    <!-- Новый блок Эконом стандарт -->
+                                    
+                                    <!-- Новый блок Стандарт+ -->
+                                   
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <h4>Индивидуальный подход</h4>
+                        <p>Проектируем дома под ваши потребности и бюджет.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Быстрое строительство</h4>
+                        <p>Готовые дома за короткие сроки без потери качества.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Гарантия качества</h4>
+                        <p>Используем только проверенные материалы и технологии.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="container">
+                <h3>Свяжитесь с нами</h3>
+                <p>Позвоните нам по телефону <a href="tel:+70704020777">0704 020 777</a> или оставьте заявку через форму на сайте.</p>
+                <a href="contacts.html" class="btn">Оставить заявку</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-socials">
+                <h4>Мы в социальных сетях</h4>
+                <a href="https://wa.me/996555600117?text=Здравствуйте!%20Я%20заинтересован%20в%20покупке%20дачного%20дома.%20Пожалуйста,%20предоставьте%20мне%20информацию." target="_blank" class="social-link">
+                    <img height="50px" src="./photo/whatsapp.png">
+                </a>
+                
+                
+                <a href="https://instagram.com" target="_blank" class="social-link">
+                  <img height="50px" src="./photo/insta.png" >
+                </a>
+                <a href="https://vk.com" target="_blank" class="social-link">
+                  <img height="50px" src="./photo/vk.png" >
+                </a>
+                <a  href="https://twitter.com"class="social-link">
+                  <img height="50px" src="./photo/twit.png" >
+                </a>
+              </div>
+        </div>
+    </footer>
+</body>
+</html>
